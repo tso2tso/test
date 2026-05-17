@@ -734,6 +734,7 @@ def run_evaluation(
     retrieval_top_k: int = None,
     allow_self_retrieval: bool = False,
     retrieval_method: str = "lexical",
+    no_eval: bool = False,
 ):
     """
     Run evaluation pipeline.
@@ -750,6 +751,7 @@ def run_evaluation(
         retrieval_top_k: Number of retrieved records
         allow_self_retrieval: Whether to allow exact query record retrieval
         retrieval_method: "lexical", "semantic", or "hybrid"
+        no_eval: Only generate/retrieve outputs; skip evaluator initialization and scoring
     """
     if baseline in {"model", "retrieval_rag"} and not model_path:
         raise ValueError("--model_path is required for model and retrieval_rag baselines")
@@ -800,18 +802,24 @@ def run_evaluation(
             base_inference=base_inference,
         )
     
-    print("\n" + "="*60)
-    print("Initializing BMW Master Evaluator...")
-    print("="*60)
-    semantic_model = get_semantic_model_path()
-    evaluator = ThresholdCalibrationEvaluator(
-        semantic_model_name=semantic_model,
-        llm_api_url=LLM_EVALUATOR_CONFIG["api_url"],
-        llm_api_key=LLM_EVALUATOR_CONFIG["api_key"],
-        llm_model_name=LLM_EVALUATOR_CONFIG["model_name"],
-        same_config=LLM_SAME_CONFIG,
-        language="zh"
-    )
+    evaluator = None
+    if not no_eval:
+        print("\n" + "="*60)
+        print("Initializing BMW Master Evaluator...")
+        print("="*60)
+        semantic_model = get_semantic_model_path()
+        evaluator = ThresholdCalibrationEvaluator(
+            semantic_model_name=semantic_model,
+            llm_api_url=LLM_EVALUATOR_CONFIG["api_url"],
+            llm_api_key=LLM_EVALUATOR_CONFIG["api_key"],
+            llm_model_name=LLM_EVALUATOR_CONFIG["model_name"],
+            same_config=LLM_SAME_CONFIG,
+            language="zh"
+        )
+    else:
+        print("\n" + "="*60)
+        print("Skipping evaluator; output-only mode enabled.")
+        print("="*60)
     
     if eval_field == "both":
         fields_to_eval = ["FaultDescription", "ServiceMeasures"]
@@ -822,6 +830,7 @@ def run_evaluation(
     print(f"Starting evaluation | Baseline: {baseline} | Model: {model_path}")
     if baseline != "model":
         print(f"Retrieval method: {retrieval_method}")
+    print(f"Scoring: {'disabled' if no_eval else 'enabled'}")
     print(f"Test samples: {len(test_data)} | Eval fields: {fields_to_eval}")
     print("="*60 + "\n")
     
@@ -833,6 +842,8 @@ def run_evaluation(
             "retrieval_corpus": retrieval_corpus if baseline != "model" else None,
             "retrieval_top_k": retrieval_top_k if baseline != "model" else None,
             "allow_self_retrieval": allow_self_retrieval if baseline != "model" else None,
+            "retrieval_method": retrieval_method if baseline != "model" else None,
+            "no_eval": no_eval,
             "num_samples": len(test_data),
             "eval_fields": fields_to_eval,
             "timestamp": timestamp,
@@ -874,10 +885,16 @@ def run_evaluation(
             "index": idx,
             "input": prompt,
             "model_output": model_output,
+            "prediction": pred_data,
+            "groundtruth": output_data,
             "evaluations": {}
         }
         if hasattr(inference, "last_retrieval"):
             sample_result["retrieved_context"] = inference.last_retrieval
+
+        if no_eval:
+            results["detailed_results"].append(sample_result)
+            continue
         
         for field in fields_to_eval:
             gt = output_data.get(field, "") or ""
@@ -921,7 +938,7 @@ def run_evaluation(
     
     # Compute summary statistics
     print("\n" + "="*60)
-    print("Evaluation complete - Results Summary")
+    print("Output complete - Results Summary" if no_eval else "Evaluation complete - Results Summary")
     print("="*60)
     
     for field in fields_to_eval:
@@ -937,9 +954,10 @@ def run_evaluation(
             "accuracy": round(accuracy, 2)
         }
         
-        print(f"\n[{field}]")
-        print(f"  Total: {total} | Pass: {passed} | Fail: {failed}")
-        print(f"  Accuracy: {accuracy:.2f}%")
+        if not no_eval:
+            print(f"\n[{field}]")
+            print(f"  Total: {total} | Pass: {passed} | Fail: {failed}")
+            print(f"  Accuracy: {accuracy:.2f}%")
     
     # Compute overall accuracy
     total_all = sum(stats[f]["total"] for f in fields_to_eval)
@@ -952,10 +970,13 @@ def run_evaluation(
         "accuracy": round(overall_accuracy, 2)
     }
     
-    print(f"\n[Overall Accuracy]: {overall_accuracy:.2f}%")
+    if no_eval:
+        print(f"\n[Output Only]: generated {len(results['detailed_results'])} records")
+    else:
+        print(f"\n[Overall Accuracy]: {overall_accuracy:.2f}%")
     
     # Save results
-    result_file = os.path.join(result_dir, "eval_results.json")
+    result_file = os.path.join(result_dir, "outputs.json" if no_eval else "eval_results.json")
     with open(result_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\n[Saved] Full results: {result_file}")
@@ -1079,6 +1100,11 @@ def main():
         action="store_true",
         help="Allow exact test sample retrieval from the corpus (disabled by default for fair evaluation)"
     )
+    parser.add_argument(
+        "--no_eval",
+        action="store_true",
+        help="Only generate/retrieve outputs and save them; skip evaluator scoring"
+    )
     
     args = parser.parse_args()
     
@@ -1094,6 +1120,7 @@ def main():
         retrieval_top_k=args.retrieval_top_k,
         allow_self_retrieval=args.allow_self_retrieval,
         retrieval_method=args.retrieval_method,
+        no_eval=args.no_eval,
     )
 
 
