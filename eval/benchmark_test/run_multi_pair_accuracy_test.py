@@ -10,9 +10,9 @@ import json
 import argparse
 from typing import Dict, Any, List
 
-# Get current script directory
+# Get current script directory and repo root (parent of eval/)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 
 # Add project paths (ensure current directory has priority)
 sys.path.insert(0, SCRIPT_DIR)
