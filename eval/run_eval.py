@@ -135,11 +135,27 @@ def log_generation(
     logger.info(log_msg)
 
 
+def _resolve_inference_model_path(model_path: str) -> str:
+    """Keep HuggingFace Hub ids (org/name); normalize local paths to absolute."""
+    p = (model_path or "").strip()
+    if not p:
+        return p
+    parts = [x for x in p.replace("\\", "/").split("/") if x and x not in (".", "..")]
+    hub_like = (
+        len(parts) == 2
+        and not os.path.isabs(p)
+        and not p.startswith(("./", ".\\"))
+    )
+    if hub_like:
+        return p.replace("\\", "/")
+    return os.path.abspath(p)
+
+
 class ModelInference:
     """Model inference wrapper class"""
     
     def __init__(self, model_path: str, use_vllm: bool = False, vllm_url: str = None):
-        self.model_path = os.path.abspath(model_path)
+        self.model_path = _resolve_inference_model_path(model_path)
         self.use_vllm = use_vllm
         self.vllm_url = vllm_url
         self.model = None
