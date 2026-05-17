@@ -443,19 +443,34 @@ def extract_prompt_and_output(sample: Dict[str, Any]) -> Tuple[str, Dict[str, st
 
 
 class RetrievalIndex:
-    """Lightweight lexical retriever for KG/RAG baselines without extra dependencies."""
+    """Retriever over JSON KG/RAG records.
+
+    Supports the previous lexical scorer and a semantic embedding index built from
+    each JSON record's diagnostic input plus answer fields.
+    """
 
     def __init__(
         self,
         corpus_path: str,
         top_k: int = 3,
         leave_one_out: bool = True,
+        method: str = "lexical",
+        semantic_model_name: Optional[str] = None,
     ):
         self.corpus_path = corpus_path
         self.top_k = top_k
         self.leave_one_out = leave_one_out
+        self.method = method
+        self.semantic_model_name = semantic_model_name
+        self.semantic_model = None
+        self.semantic_embeddings = None
         self.records = self._load_records(corpus_path)
-        print(f"[Retrieval] Loaded {len(self.records)} records from: {corpus_path}")
+        if self.method in {"semantic", "hybrid"}:
+            self._build_semantic_index()
+        print(
+            f"[Retrieval] Loaded {len(self.records)} records from: {corpus_path} "
+            f"| method={self.method}"
+        )
 
     def _load_records(self, corpus_path: str) -> List[Dict[str, Any]]:
         with open(corpus_path, "r", encoding="utf-8") as f:
@@ -471,8 +486,17 @@ class RetrievalIndex:
                 "output": output,
                 "fields": parsed,
                 "tokens": self._tokenize(prompt),
+                "document": self._build_document_text(prompt, output),
             })
         return records
+
+    @staticmethod
+    def _build_document_text(prompt: str, output: Dict[str, str]) -> str:
+        return (
+            f"Diagnostic Input: {prompt}\n"
+            f"FaultDescription: {output.get('FaultDescription', '')}\n"
+            f"ServiceMeasures: {output.get('ServiceMeasures', '')}"
+        )
 
     @staticmethod
     def _normalize_text(text: str) -> str:
@@ -482,10 +506,34 @@ class RetrievalIndex:
     def _tokenize(text: str) -> set:
         return set(re.findall(r"[a-z0-9_]+", (text or "").lower()))
 
+    def _build_semantic_index(self):
+        try:
+            from sentence_transformers import SentenceTransformer
+        except ImportError as exc:
+            raise ImportError(
+                "Semantic RAG requires sentence-transformers. "
+                "Install it with: pip install sentence-transformers"
+            ) from exc
+
+        model_name = self.semantic_model_name or get_semantic_model_path()
+        print(f"[Retrieval] Building semantic index with: {model_name}")
+        self.semantic_model = SentenceTransformer(model_name)
+        documents = [record["document"] for record in self.records]
+        self.semantic_embeddings = self.semantic_model.encode(
+            documents,
+            batch_size=32,
+            convert_to_tensor=True,
+            normalize_embeddings=True,
+            show_progress_bar=True,
+        )
+
     def retrieve(self, query: str) -> List[Dict[str, Any]]:
         query_norm = self._normalize_text(query)
         query_fields = parse_diagnostic_input(query)
         query_tokens = self._tokenize(query)
+
+        if self.method in {"semantic", "hybrid"}:
+            return self._retrieve_semantic(query, query_norm, query_fields, query_tokens)
 
         scored = []
         for record in self.records:
@@ -495,6 +543,48 @@ class RetrievalIndex:
             score = self._score(query_fields, query_tokens, record)
             if score > 0:
                 scored.append((score, record))
+
+        scored.sort(key=lambda item: item[0], reverse=True)
+        return [
+            {
+                "rank": rank,
+                "score": round(score, 4),
+                "input": record["input"],
+                "output": record["output"],
+                "fields": record["fields"],
+            }
+            for rank, (score, record) in enumerate(scored[:self.top_k], start=1)
+        ]
+
+    def _retrieve_semantic(
+        self,
+        query: str,
+        query_norm: str,
+        query_fields: Dict[str, str],
+        query_tokens: set,
+    ) -> List[Dict[str, Any]]:
+        if self.semantic_model is None or self.semantic_embeddings is None:
+            raise RuntimeError("Semantic retrieval index is not initialized")
+
+        import torch
+
+        query_embedding = self.semantic_model.encode(
+            [query],
+            convert_to_tensor=True,
+            normalize_embeddings=True,
+        )[0]
+        semantic_scores = torch.matmul(self.semantic_embeddings, query_embedding).detach().cpu().tolist()
+
+        scored = []
+        for semantic_score, record in zip(semantic_scores, self.records):
+            if self.leave_one_out and record["input_norm"] == query_norm:
+                continue
+
+            score = float(semantic_score) * 100.0
+            if self.method == "hybrid":
+                # Keep exact ECU/DTC matches influential while still ranking by embedding relevance.
+                score += self._score(query_fields, query_tokens, record)
+            scored.append((score, record))
 
         scored.sort(key=lambda item: item[0], reverse=True)
         return [
@@ -642,7 +732,8 @@ def run_evaluation(
     baseline: str = "model",
     retrieval_corpus: str = None,
     retrieval_top_k: int = None,
-    allow_self_retrieval: bool = False
+    allow_self_retrieval: bool = False,
+    retrieval_method: str = "lexical",
 ):
     """
     Run evaluation pipeline.
@@ -658,6 +749,7 @@ def run_evaluation(
         retrieval_corpus: KG/RAG corpus path
         retrieval_top_k: Number of retrieved records
         allow_self_retrieval: Whether to allow exact query record retrieval
+        retrieval_method: "lexical", "semantic", or "hybrid"
     """
     if baseline in {"model", "retrieval_rag"} and not model_path:
         raise ValueError("--model_path is required for model and retrieval_rag baselines")
@@ -692,6 +784,8 @@ def run_evaluation(
             corpus_path=retrieval_corpus,
             top_k=retrieval_top_k,
             leave_one_out=not allow_self_retrieval,
+            method=retrieval_method,
+            semantic_model_name=get_semantic_model_path() if retrieval_method in {"semantic", "hybrid"} else None,
         )
         base_inference = None
         if baseline == "retrieval_rag":
@@ -726,6 +820,8 @@ def run_evaluation(
     
     print("\n" + "="*60)
     print(f"Starting evaluation | Baseline: {baseline} | Model: {model_path}")
+    if baseline != "model":
+        print(f"Retrieval method: {retrieval_method}")
     print(f"Test samples: {len(test_data)} | Eval fields: {fields_to_eval}")
     print("="*60 + "\n")
     
@@ -968,6 +1064,17 @@ def main():
         help="Number of retrieved KG/RAG records for retrieval baselines"
     )
     parser.add_argument(
+        "--retrieval_method",
+        type=str,
+        default="lexical",
+        choices=["lexical", "semantic", "hybrid"],
+        help=(
+            "Retrieval method for RAG baselines. "
+            "'semantic' builds an embedding index from the JSON corpus; "
+            "'hybrid' combines semantic scores with exact ECU/DTC lexical scoring."
+        )
+    )
+    parser.add_argument(
         "--allow_self_retrieval",
         action="store_true",
         help="Allow exact test sample retrieval from the corpus (disabled by default for fair evaluation)"
@@ -985,7 +1092,8 @@ def main():
         baseline=args.baseline,
         retrieval_corpus=args.retrieval_corpus,
         retrieval_top_k=args.retrieval_top_k,
-        allow_self_retrieval=args.allow_self_retrieval
+        allow_self_retrieval=args.allow_self_retrieval,
+        retrieval_method=args.retrieval_method,
     )
 
 
