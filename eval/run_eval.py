@@ -135,20 +135,55 @@ def log_generation(
     logger.info(log_msg)
 
 
+def _is_hub_like_model_path(p: str) -> bool:
+    """True if *p* looks like a Hugging Face Hub id ``org/model``, not a filesystem path."""
+    p = (p or "").strip()
+    if not p:
+        return False
+    parts = [x for x in p.replace("\\", "/").split("/") if x and x not in (".", "..")]
+    return (
+        len(parts) == 2
+        and not os.path.isabs(p)
+        and not p.startswith(("./", ".\\"))
+    )
+
+
 def _resolve_inference_model_path(model_path: str) -> str:
     """Keep HuggingFace Hub ids (org/name); normalize local paths to absolute."""
     p = (model_path or "").strip()
     if not p:
         return p
-    parts = [x for x in p.replace("\\", "/").split("/") if x and x not in (".", "..")]
-    hub_like = (
-        len(parts) == 2
-        and not os.path.isabs(p)
-        and not p.startswith(("./", ".\\"))
-    )
-    if hub_like:
+    if _is_hub_like_model_path(p):
         return p.replace("\\", "/")
     return os.path.abspath(p)
+
+
+def _hf_hub_id_to_modelscope_id(model_id: str) -> str:
+    """Map ``Qwen/...`` HF ids to ModelScope ``qwen/...`` when applicable."""
+    if "/" not in model_id:
+        return model_id
+    org, name = model_id.split("/", 1)
+    if org.lower() == "qwen":
+        return f"qwen/{name}"
+    return model_id
+
+
+def _download_hub_model_via_modelscope(hub_id: str) -> Optional[str]:
+    """Download an HF-style hub id via ModelScope; returns local directory or None."""
+    try:
+        from modelscope import snapshot_download
+    except ImportError:
+        print("[Inference] ModelScope not installed (pip install modelscope); skipping Hub mirror download.")
+        return None
+    ms_id = _hf_hub_id_to_modelscope_id(hub_id)
+    print(f"[Inference] Downloading via ModelScope: {ms_id}")
+    try:
+        local_path = snapshot_download(ms_id)
+        print(f"[Inference] ModelScope download complete: {local_path}")
+        return local_path
+    except Exception as e:
+        print(f"[Inference] ModelScope snapshot_download failed: {e}")
+        return None
 
 
 class ModelInference:
@@ -169,47 +204,115 @@ class ModelInference:
             self._load_model()
     
     def _load_model(self):
-        """Load HuggingFace model"""
+        """Load HuggingFace model (Hub id, local dir, or ModelScope when HF is unreachable)."""
         print(f"[Inference] Loading model: {self.model_path}")
-        try:
-            from transformers import AutoModelForCausalLM, AutoTokenizer
-            import torch
-            
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                self.model_path, 
-                trust_remote_code=True
-            )
-            
-            # Try 4-bit quantization to save memory
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        import torch
+
+        load_sources: List[str] = []
+        hub_id = self.model_path
+        use_ms_first = os.environ.get("USE_MODELSCOPE", "").lower() in ("1", "true", "yes")
+        if _is_hub_like_model_path(hub_id):
+            if use_ms_first:
+                alt = _download_hub_model_via_modelscope(hub_id)
+                if alt:
+                    load_sources.append(alt)
+            load_sources.append(hub_id)
+        else:
+            load_sources.append(self.model_path)
+
+        last_err: Optional[Exception] = None
+        for src in load_sources:
             try:
-                from transformers import BitsAndBytesConfig
-                bnb_config = BitsAndBytesConfig(
-                    load_in_4bit=True,
-                    bnb_4bit_compute_dtype=torch.bfloat16,
-                    bnb_4bit_use_double_quant=True,
-                    bnb_4bit_quant_type="nf4"
+                self.tokenizer = AutoTokenizer.from_pretrained(
+                    src,
+                    trust_remote_code=True,
                 )
-                self.model = AutoModelForCausalLM.from_pretrained(
-                    self.model_path,
-                    quantization_config=bnb_config,
-                    device_map="auto",
-                    trust_remote_code=True
-                )
+
+                # Try 4-bit quantization to save memory
+                try:
+                    from transformers import BitsAndBytesConfig
+
+                    bnb_config = BitsAndBytesConfig(
+                        load_in_4bit=True,
+                        bnb_4bit_compute_dtype=torch.bfloat16,
+                        bnb_4bit_use_double_quant=True,
+                        bnb_4bit_quant_type="nf4",
+                    )
+                    self.model = AutoModelForCausalLM.from_pretrained(
+                        src,
+                        quantization_config=bnb_config,
+                        device_map="auto",
+                        trust_remote_code=True,
+                    )
+                except Exception as e:
+                    print(f"[Inference] 4-bit quantization failed, trying normal load: {e}")
+                    self.model = AutoModelForCausalLM.from_pretrained(
+                        src,
+                        torch_dtype=torch.bfloat16,
+                        device_map="auto",
+                        trust_remote_code=True,
+                    )
+
+                self.model.eval()
+                self.model_path = src
+                print("[Inference] Model loaded successfully")
+                return
+
             except Exception as e:
-                print(f"[Inference] 4-bit quantization failed, trying normal load: {e}")
-                self.model = AutoModelForCausalLM.from_pretrained(
-                    self.model_path,
-                    torch_dtype=torch.bfloat16,
-                    device_map="auto",
-                    trust_remote_code=True
-                )
-            
-            self.model.eval()
-            print(f"[Inference] Model loaded successfully")
-            
-        except Exception as e:
-            print(f"[Inference] Model load failed: {e}")
-            raise
+                last_err = e
+                print(f"[Inference] Load attempt failed for {src!r}: {e}")
+
+        # Hub id failed on HF; try ModelScope once if not already tried
+        if _is_hub_like_model_path(hub_id) and hub_id in load_sources:
+            alt = _download_hub_model_via_modelscope(hub_id)
+            if alt and alt not in load_sources:
+                try:
+                    self.tokenizer = AutoTokenizer.from_pretrained(
+                        alt,
+                        trust_remote_code=True,
+                    )
+                    try:
+                        from transformers import BitsAndBytesConfig
+
+                        bnb_config = BitsAndBytesConfig(
+                            load_in_4bit=True,
+                            bnb_4bit_compute_dtype=torch.bfloat16,
+                            bnb_4bit_use_double_quant=True,
+                            bnb_4bit_quant_type="nf4",
+                        )
+                        self.model = AutoModelForCausalLM.from_pretrained(
+                            alt,
+                            quantization_config=bnb_config,
+                            device_map="auto",
+                            trust_remote_code=True,
+                        )
+                    except Exception as e:
+                        print(f"[Inference] 4-bit quantization failed, trying normal load: {e}")
+                        self.model = AutoModelForCausalLM.from_pretrained(
+                            alt,
+                            torch_dtype=torch.bfloat16,
+                            device_map="auto",
+                            trust_remote_code=True,
+                        )
+                    self.model.eval()
+                    self.model_path = alt
+                    print("[Inference] Model loaded successfully (ModelScope)")
+                    return
+                except Exception as e:
+                    last_err = e
+                    print(f"[Inference] ModelScope local load failed: {e}")
+
+        print(
+            "[Inference] Could not download/load model. If Hugging Face is blocked, try:\n"
+            "  export HF_ENDPOINT=https://hf-mirror.com\n"
+            "or: pip install modelscope && export USE_MODELSCOPE=1\n"
+            "or: huggingface-cli download Qwen/Qwen2.5-7B-Instruct --local-dir ./models/Qwen2.5-7B-Instruct\n"
+            "    then: --model_path ./models/Qwen2.5-7B-Instruct"
+        )
+        if last_err:
+            raise last_err
+        raise RuntimeError("Model load failed with no exception captured")
     
     def generate(self, prompt: str, max_new_tokens: int = 512) -> str:
         """Generate response"""
