@@ -15,7 +15,8 @@ DEFAULT_RETRIEVAL_CORPUS_PATH = os.path.join(PROJECT_ROOT, "Integrated_Data.json
 
 # ==================== LLM Evaluator Configuration ====================
 
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "XXX")
+# 将密钥填入下方字符串；若仓库会推送远端，勿提交真实密钥。
+OPENROUTER_API_KEY = ""
 
 LLM_EVALUATOR_CONFIG = {
     "api_url": "https://openrouter.ai/api/v1/chat/completions",
