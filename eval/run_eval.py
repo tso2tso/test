@@ -39,7 +39,6 @@ from config import (
     STUDENT_SYSTEM_PROMPT, DEFAULT_RETRIEVAL_CORPUS_PATH,
     RETRIEVAL_BASELINE_CONFIG
 )
-from evaluators import ThresholdCalibrationEvaluator
 
 
 class FlushFileHandler(logging.FileHandler):
@@ -464,6 +463,9 @@ class RetrievalIndex:
         self.semantic_model_name = semantic_model_name
         self.semantic_model = None
         self.semantic_embeddings = None
+        self._semantic_backend: Optional[str] = None
+        self._tfidf_vectorizer = None
+        self._tfidf_matrix = None
         self.records = self._load_records(corpus_path)
         if self.method in {"semantic", "hybrid"}:
             self._build_semantic_index()
@@ -507,25 +509,44 @@ class RetrievalIndex:
         return set(re.findall(r"[a-z0-9_]+", (text or "").lower()))
 
     def _build_semantic_index(self):
+        documents = [record["document"] for record in self.records]
+        model_name = self.semantic_model_name or get_semantic_model_path()
+
         try:
             from sentence_transformers import SentenceTransformer
-        except ImportError as exc:
-            raise ImportError(
-                "Semantic RAG requires sentence-transformers. "
-                "Install it with: pip install sentence-transformers"
-            ) from exc
 
-        model_name = self.semantic_model_name or get_semantic_model_path()
-        print(f"[Retrieval] Building semantic index with: {model_name}")
-        self.semantic_model = SentenceTransformer(model_name)
-        documents = [record["document"] for record in self.records]
-        self.semantic_embeddings = self.semantic_model.encode(
-            documents,
-            batch_size=32,
-            convert_to_tensor=True,
-            normalize_embeddings=True,
-            show_progress_bar=True,
-        )
+            print(f"[Retrieval] Building semantic index (sentence-transformers): {model_name}")
+            self.semantic_model = SentenceTransformer(model_name)
+            self.semantic_embeddings = self.semantic_model.encode(
+                documents,
+                batch_size=32,
+                convert_to_tensor=True,
+                normalize_embeddings=True,
+                show_progress_bar=True,
+            )
+            self._semantic_backend = "sentence_transformers"
+            return
+        except Exception as e:
+            print(
+                f"[Retrieval] sentence-transformers / PyTorch path failed ({e}); "
+                "trying TF-IDF fallback (no GPU/PyTorch needed)."
+            )
+
+        try:
+            from sklearn.feature_extraction.text import TfidfVectorizer
+
+            self._tfidf_vectorizer = TfidfVectorizer(max_features=8192, ngram_range=(1, 2))
+            self._tfidf_matrix = self._tfidf_vectorizer.fit_transform(documents)
+            self.semantic_model = None
+            self.semantic_embeddings = None
+            self._semantic_backend = "tfidf"
+            print("[Retrieval] Built TF-IDF index for semantic retrieval.")
+            return
+        except ImportError as exc:
+            raise RuntimeError(
+                "Semantic retrieval needs either sentence-transformers (with a compatible PyTorch, "
+                "e.g. torch>=2.4) or scikit-learn for TF-IDF fallback: pip install scikit-learn"
+            ) from exc
 
     def retrieve(self, query: str) -> List[Dict[str, Any]]:
         query_norm = self._normalize_text(query)
@@ -563,17 +584,25 @@ class RetrievalIndex:
         query_fields: Dict[str, str],
         query_tokens: set,
     ) -> List[Dict[str, Any]]:
-        if self.semantic_model is None or self.semantic_embeddings is None:
-            raise RuntimeError("Semantic retrieval index is not initialized")
+        if self._semantic_backend == "tfidf":
+            if self._tfidf_vectorizer is None or self._tfidf_matrix is None:
+                raise RuntimeError("TF-IDF retrieval index is not initialized")
+            from sklearn.metrics.pairwise import cosine_similarity
 
-        import torch
+            qv = self._tfidf_vectorizer.transform([query])
+            semantic_scores = cosine_similarity(qv, self._tfidf_matrix)[0].tolist()
+        else:
+            if self.semantic_model is None or self.semantic_embeddings is None:
+                raise RuntimeError("Semantic retrieval index is not initialized")
 
-        query_embedding = self.semantic_model.encode(
-            [query],
-            convert_to_tensor=True,
-            normalize_embeddings=True,
-        )[0]
-        semantic_scores = torch.matmul(self.semantic_embeddings, query_embedding).detach().cpu().tolist()
+            import torch
+
+            query_embedding = self.semantic_model.encode(
+                [query],
+                convert_to_tensor=True,
+                normalize_embeddings=True,
+            )[0]
+            semantic_scores = torch.matmul(self.semantic_embeddings, query_embedding).detach().cpu().tolist()
 
         scored = []
         for semantic_score, record in zip(semantic_scores, self.records):
@@ -804,6 +833,8 @@ def run_evaluation(
     
     evaluator = None
     if not no_eval:
+        from evaluators import ThresholdCalibrationEvaluator
+
         print("\n" + "="*60)
         print("Initializing BMW Master Evaluator...")
         print("="*60)

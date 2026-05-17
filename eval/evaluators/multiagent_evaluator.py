@@ -15,13 +15,6 @@ import time
 import ast
 from typing import Dict, Any, List, Union
 
-try:
-    from sentence_transformers import SentenceTransformer, util
-    SENTENCE_TRANSFORMERS_AVAILABLE = True
-except ImportError:
-    SENTENCE_TRANSFORMERS_AVAILABLE = False
-    print("[System] Warning: sentence-transformers not found. Semantic features disabled.")
-
 
 class ThresholdCalibrationEvaluator:
     def __init__(self, semantic_model_name: str, llm_api_url: str, llm_api_key: str, llm_model_name: str,
@@ -38,6 +31,7 @@ class ThresholdCalibrationEvaluator:
         self.same_model_name = same_config.get("model_name")
 
         self.bert_model = None
+        self._bert_disabled = False
         self.language = language
 
         # BMW ECU knowledge base
@@ -57,21 +51,21 @@ class ThresholdCalibrationEvaluator:
             "ACSM", "MRS", "ICM", "SAS", "SAS2", "SAS3", "KAFAS", "KAFAS2", "KAFAS4",
             "TRSVC", "ICAM", "ADCAM", "PMA", "PAD", "LRR", "SRR", "RSU",
             # EV & High Voltage
-            "EME", "SME", "HVS", "CSC", "CCU", "KLE", "LIM", "EWS", "ZKE", "GM"
+            "EME", "SME", "HVS", "CSC", "CCU", "KLE", "LIM", "EWS", "ZKE",             "GM"
         }
 
-        if SENTENCE_TRANSFORMERS_AVAILABLE:
-            print(f"      [Evaluator] Pre-loading Semantic Model: {self.semantic_model_name}...")
-            self._load_bert_model()
-
     def _load_bert_model(self):
-        """Load BERT model for semantic similarity computation."""
-        if not SENTENCE_TRANSFORMERS_AVAILABLE: return
-        if self.bert_model is None:
-            try:
-                self.bert_model = SentenceTransformer(self.semantic_model_name)
-            except Exception as e:
-                print(f"      [Evaluator] Error loading BERT: {e}")
+        """Load embedding model lazily; avoids import-time torch/transformers crashes."""
+        if self.bert_model is not None or self._bert_disabled:
+            return
+        try:
+            from sentence_transformers import SentenceTransformer
+
+            print(f"      [Evaluator] Loading semantic model: {self.semantic_model_name}...")
+            self.bert_model = SentenceTransformer(self.semantic_model_name)
+        except Exception as e:
+            print(f"      [Evaluator] Semantic model unavailable (similarity gate degraded): {e}")
+            self._bert_disabled = True
 
     def _call_llm_generic(self, url, key, model, prompt, temp=0.0, max_retries=3) -> str:
         """Generic LLM caller with retry and backoff mechanism."""
@@ -111,13 +105,20 @@ class ThresholdCalibrationEvaluator:
 
     def compute_similarity(self, text1, text2):
         """Compute semantic similarity using BERT embeddings."""
-        if not text1 or not text2: return 0.0
+        if not text1 or not text2:
+            return 0.0
+        if self._bert_disabled:
+            return 0.0
         try:
-            if self.bert_model is None: self._load_bert_model()
+            from sentence_transformers import util
+
+            self._load_bert_model()
+            if self.bert_model is None:
+                return 0.0
             e1 = self.bert_model.encode(text1, convert_to_tensor=True)
             e2 = self.bert_model.encode(text2, convert_to_tensor=True)
             return float(util.pytorch_cos_sim(e1, e2)[0][0])
-        except:
+        except Exception:
             return 0.0
 
     def _build_prompt_score(self, field, groundtruth, prediction):
