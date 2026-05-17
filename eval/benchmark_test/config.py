@@ -7,8 +7,12 @@ import os
 # ==================== Path Configuration ====================
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Local fine-tuned model path (can be merged model or LoRA adapter)
-LOCAL_MODEL_PATH = os.path.join(PROJECT_ROOT, "distillation", "outputs", "sft", "merged_model")
+# Default: load base Qwen2.5-7B from Hugging Face Hub.
+# For fine-tuned merged weights, set EVAL_LOCAL_MODEL_PATH or replace with a local dir.
+LOCAL_MODEL_PATH = os.environ.get(
+    "EVAL_LOCAL_MODEL_PATH",
+    "Qwen/Qwen2.5-7B-Instruct",
+)
 
 # Base model path (required for LoRA adapter, set None to auto-detect from adapter_config.json)
 BASE_MODEL_PATH = "Qwen/Qwen2.5-7B-Instruct"
@@ -96,23 +100,32 @@ def ensure_output_dir():
 
 
 def check_local_model():
-    """Check if local model exists (supports full model and LoRA adapter)."""
-    if not os.path.exists(LOCAL_MODEL_PATH):
-        print(f"[Warning] Local model path not found: {LOCAL_MODEL_PATH}")
+    """Check if model can be loaded: Hub id (org/name) or local checkpoint directory."""
+    hub_style = (
+        "/" in LOCAL_MODEL_PATH.replace("\\", "/")
+        and not os.path.isabs(LOCAL_MODEL_PATH)
+        and len([p for p in LOCAL_MODEL_PATH.replace("\\", "/").split("/") if p]) == 2
+    )
+    if hub_style and not os.path.isdir(LOCAL_MODEL_PATH):
+        print(f"[Config] Using HuggingFace Hub model: {LOCAL_MODEL_PATH}")
+        return True
+
+    if not os.path.isdir(LOCAL_MODEL_PATH):
+        print(f"[Warning] Local model path not found or not a directory: {LOCAL_MODEL_PATH}")
         return False
-    
+
     adapter_config = os.path.join(LOCAL_MODEL_PATH, "adapter_config.json")
     if os.path.exists(adapter_config):
         print(f"[Config] Detected LoRA adapter: {LOCAL_MODEL_PATH}")
         print(f"[Config] Base model: {BASE_MODEL_PATH}")
         return True
-    
+
     config_file = os.path.join(LOCAL_MODEL_PATH, "config.json")
     if os.path.exists(config_file):
         print(f"[Config] Detected full model: {LOCAL_MODEL_PATH}")
         return True
-    
-    print(f"[Warning] No valid model files found (need config.json or adapter_config.json)")
+
+    print("[Warning] No valid model files found (need config.json or adapter_config.json)")
     return False
 
 

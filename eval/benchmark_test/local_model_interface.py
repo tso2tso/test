@@ -144,13 +144,27 @@ class LocalModelInterface:
         
         print(f"[LocalModel] ✅ Model loaded successfully")
     
+    def _resolve_full_model_source(self) -> str:
+        """Use Hub id when path is missing; avoid passing absent absolute paths to HF (repo_id error)."""
+        p = self.model_path
+        if os.path.isdir(p):
+            return p
+        parts = [x for x in p.replace("\\", "/").split("/") if x and x not in (".", "..")]
+        hub_like = len(parts) == 2 and not os.path.isabs(p) and not p.startswith(("./", ".\\"))
+        if hub_like:
+            return p
+        fb = self.base_model_path or "Qwen/Qwen2.5-7B-Instruct"
+        print(f"[LocalModel] Missing or invalid local path {p!r}, loading base model {fb!r}")
+        return fb
+
     def _load_full_model(self):
         """Load full model"""
         print(f"[LocalModel] Loading full model...")
-        
+        source = self._resolve_full_model_source()
+
         # Load tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(
-            self.model_path,
+            source,
             trust_remote_code=self.trust_remote_code,
             padding_side="left"
         )
@@ -161,7 +175,7 @@ class LocalModelInterface:
         
         # Load model
         self.model = AutoModelForCausalLM.from_pretrained(
-            self.model_path,
+            source,
             torch_dtype=self.torch_dtype,
             device_map="auto",
             trust_remote_code=self.trust_remote_code,
