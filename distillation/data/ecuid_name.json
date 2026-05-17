@@ -1,0 +1,2497 @@
+[
+    {
+        "ECUID": "AAG_02",
+        "ECUNAME": "Active Aerodynamic Module (AAG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AAG_F15",
+        "ECUNAME": "Active Aerodynamic Module (AAG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ACP_RRS2",
+        "ECUNAME": "Audio Control Panel (ACP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ACSM3",
+        "ECUNAME": "Advanced Crash Safety Module (ACSM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ACSM4",
+        "ECUNAME": "Advanced Crash Safety Module (ACSM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ACSM4I",
+        "ECUNAME": "Advanced Crash Safety Module (ACSM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ACSM5",
+        "ECUNAME": "Advanced Crash Safety Module (ACSM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ACSM6",
+        "ECUNAME": "Advanced Crash Safety Module (ACSM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ADCAM_L",
+        "ECUNAME": "ADAS Camera (ADCAM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ADCAM_M",
+        "ECUNAME": "ADAS Camera (ADCAM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AHM_01",
+        "ECUNAME": "Trailer Module (AHM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AHM_70",
+        "ECUNAME": "Trailer Module (AHM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AHM_E65",
+        "ECUNAME": "Trailer Module (AHM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPH07",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPH10",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPH70",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPHHB20",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPT07",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPT10",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPT70",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPTHB10",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPTHB32",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPTLR13",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "AMPTLR89",
+        "ECUNAME": "Amplifier (AMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ASA_01",
+        "ECUNAME": "Active Sound Design (ASA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ASD_10",
+        "ECUNAME": "Active Sound Design (ASD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ASD_89",
+        "ECUNAME": "Active Sound Design (ASD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ASD_I12",
+        "ECUNAME": "Active Sound Design (ASD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ATM",
+        "ECUNAME": "Antenna Tuner Module (ATM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ATM02",
+        "ECUNAME": "Antenna Tuner Module (ATM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BAT12HAF",
+        "ECUNAME": "Battery Module (BAT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BAT48_15",
+        "ECUNAME": "Battery Module (BAT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BAT48FAR",
+        "ECUNAME": "Battery Module (BAT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BATT48",
+        "ECUNAME": "Battery Module (BAT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BCP_SP21",
+        "ECUNAME": "Basic Central Platform (BCP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BDC",
+        "ECUNAME": "Body Domain Controller (BDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BDC_G05",
+        "ECUNAME": "Body Domain Controller (BDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BDC_G11",
+        "ECUNAME": "Body Domain Controller (BDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFH_01",
+        "ECUNAME": "Passenger Door Module (BFH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFH_12",
+        "ECUNAME": "Passenger Door Module (BFH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFH_G11",
+        "ECUNAME": "Passenger Door Module (BFH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFH_I20",
+        "ECUNAME": "Passenger Door Module (BFH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFS_01",
+        "ECUNAME": "Passenger Door Switch (BFS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFS_12",
+        "ECUNAME": "Passenger Door Switch (BFS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFS_G11",
+        "ECUNAME": "Passenger Door Switch (BFS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BFS_I20",
+        "ECUNAME": "Passenger Door Switch (BFS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BIS01",
+        "ECUNAME": "Bus Interface System (BIS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BMT01HL",
+        "ECUNAME": "Battery Main Terminal (BMT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BMT01HR",
+        "ECUNAME": "Battery Main Terminal (BMT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BZF_I20",
+        "ECUNAME": "Centre Console Switch Panel (BZF)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "BZM_U06",
+        "ECUNAME": "Centre Console Module (BZM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CAS4_2",
+        "ECUNAME": "Car Access System (CAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CCU_01",
+        "ECUNAME": "Charge Control Unit (CCU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CCU_22",
+        "ECUNAME": "Charge Control Unit (CCU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CCU_P1",
+        "ECUNAME": "Charge Control Unit (CCU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CDM02",
+        "ECUNAME": "Charge Door Module (CDM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CDM02SL",
+        "ECUNAME": "Charge Door Module (CDM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CDM02SR",
+        "ECUNAME": "Charge Door Module (CDM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CDM_RR21",
+        "ECUNAME": "Charge Door Module (CDM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CDM_RR4",
+        "ECUNAME": "Charge Door Module (CDM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CECALL",
+        "ECUNAME": "Emergency Call Module (CECALL)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CECALLR",
+        "ECUNAME": "Emergency Call Module (CECALL)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CGW_RRS2",
+        "ECUNAME": "Central Gateway Module (CGW)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CHAMP2",
+        "ECUNAME": "Car Hifi Amplifier Professional (CHAMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CHAMP2R",
+        "ECUNAME": "Car Hifi Amplifier Professional (CHAMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CHAMP2RG",
+        "ECUNAME": "Car Hifi Amplifier Professional (CHAMP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CHC01",
+        "ECUNAME": "Climate High Control (CHC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CHRO_F56",
+        "ECUNAME": "Chronograph Module (CHRO)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CIC",
+        "ECUNAME": "Car Information Computer (CIC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CICM",
+        "ECUNAME": "Car Information Computer (CIC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CICMR",
+        "ECUNAME": "Car Information Computer (CIC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CICMR_GW",
+        "ECUNAME": "Car Information Computer (CIC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CICR",
+        "ECUNAME": "Car Information Computer (CIC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CICR_GW",
+        "ECUNAME": "Car Information Computer (CIC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CID_01",
+        "ECUNAME": "Central Information Display (CID)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CID_01R1",
+        "ECUNAME": "Central Information Display (CID)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CID_01R2",
+        "ECUNAME": "Central Information Display (CID)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CID_01T",
+        "ECUNAME": "Central Information Display (CID)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CID_25",
+        "ECUNAME": "Central Information Display (CID)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CIDR_70",
+        "ECUNAME": "Central Information Display (CID)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CMEDIA",
+        "ECUNAME": "Connected Media (CMEDIA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CMEDIAR",
+        "ECUNAME": "Connected Media (CMEDIA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CPM_G30",
+        "ECUNAME": "Central Platform Module (CPM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CSM3",
+        "ECUNAME": "Crash Safety Module (CSM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CSM4",
+        "ECUNAME": "Crash Safety Module (CSM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CTM_F33",
+        "ECUNAME": "Convertible Top Module (CTM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVC_I20",
+        "ECUNAME": "ECU Module (CVC_I20)",
+        "ECUTYPE": "Unknown"
+    },
+    {
+        "ECUID": "CVM_12",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVM_F23",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVM_F57",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVM_G14",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVM_G23",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVM_G29",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVM_I15",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVM_RR6",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "CVMS_I15",
+        "ECUNAME": "Convertible Top Module (CVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D71N47A0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D71N47C0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D72N47A0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D72N47B0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D73N47A0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D73N57A0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D73N57B0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D73N57C0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D73N57D0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D73N57E0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D75BX7A0",
+        "ECUNAME": "Diesel Engine Control (D7x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D83BX7C0",
+        "ECUNAME": "Diesel Engine Control (D8x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "D94BX7A0",
+        "ECUNAME": "Diesel Engine Control (D9x)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DCS01",
+        "ECUNAME": "Door Control System (DCS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DKG_10",
+        "ECUNAME": "Dual Clutch Gearbox (DKG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DKG_90",
+        "ECUNAME": "Dual Clutch Gearbox (DKG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DME8FF_L",
+        "ECUNAME": "Digital Motor Electronics (DME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DME8FF_R",
+        "ECUNAME": "Digital Motor Electronics (DME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DME98_L",
+        "ECUNAME": "Digital Motor Electronics (DME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DME98_R",
+        "ECUNAME": "Digital Motor Electronics (DME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DME9FF_R",
+        "ECUNAME": "Digital Motor Electronics (DME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DME_BX8",
+        "ECUNAME": "Digital Motor Electronics (DME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DSC_01",
+        "ECUNAME": "Dynamic Stability Control (DSC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DSC_10",
+        "ECUNAME": "Dynamic Stability Control (DSC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DSC_25",
+        "ECUNAME": "Dynamic Stability Control (DSC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DSC_G11",
+        "ECUNAME": "Dynamic Stability Control (DSC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DSC_G20",
+        "ECUNAME": "Dynamic Stability Control (DSC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DSC_G30N",
+        "ECUNAME": "Dynamic Stability Control (DSC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DSC_I1",
+        "ECUNAME": "Dynamic Stability Control (DSC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DWA_12",
+        "ECUNAME": "Anti-Theft Alarm (DWA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "DWA_G14",
+        "ECUNAME": "Anti-Theft Alarm (DWA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EDMEI1",
+        "ECUNAME": "Electric Drive Module Electronics (EDMEI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EHC2RR4",
+        "ECUNAME": "Electronic Height Control (EHC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EHC_01",
+        "ECUNAME": "Electronic Height Control (EHC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EKP301",
+        "ECUNAME": "Electric Fuel Pump (EKP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EKP360",
+        "ECUNAME": "Electric Fuel Pump (EKP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ELV_G30",
+        "ECUNAME": "Electric Steering Lock (ELV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMA_LI",
+        "ECUNAME": "Electric Motor (EMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMA_RE",
+        "ECUNAME": "Electric Motor (EMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMARS_H1",
+        "ECUNAME": "Electric Motor (EMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMARS_H2",
+        "ECUNAME": "Electric Motor (EMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMARS_V1",
+        "ECUNAME": "Electric Motor (EMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMARS_V2",
+        "ECUNAME": "Electric Motor (EMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_04",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_10",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_F18",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_F30",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_F45",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_G12",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_I01",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_I1",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EME_I12",
+        "ECUNAME": "Electric Motor Electronics (EME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMF_01",
+        "ECUNAME": "Electronic Parking Brake (EMF)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EMF_10",
+        "ECUNAME": "Electronic Parking Brake (EMF)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ENAVEVO",
+        "ECUNAME": "Navigation (ENAV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ENS",
+        "ECUNAME": "Energy Management System (ENS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ENS_SP21",
+        "ECUNAME": "Energy Management System (ENS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ENTRY",
+        "ECUNAME": "Entry Head Unit (Entry)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ENTRYNAV",
+        "ECUNAME": "Entry Head Unit (Entry)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_10",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_20",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_25",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_G01",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_G05",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_G11",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_I1",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_I20",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_TK02",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "EPS_U06",
+        "ECUNAME": "Electric Power Steering (EPS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAH_01",
+        "ECUNAME": "Driver Door Module (FAH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAH_12",
+        "ECUNAME": "Driver Door Module (FAH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAH_G11",
+        "ECUNAME": "Driver Door Module (FAH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAH_I20",
+        "ECUNAME": "Driver Door Module (FAH)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAS_01",
+        "ECUNAME": "Driver Door Switch (FAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAS_12",
+        "ECUNAME": "Driver Door Switch (FAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAS_G11",
+        "ECUNAME": "Driver Door Switch (FAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FAS_I20",
+        "ECUNAME": "Driver Door Switch (FAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FEM_20",
+        "ECUNAME": "Front Electronic Module (FEM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FKA_01",
+        "ECUNAME": "Driver Assistance Camera (FKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FKA_F15",
+        "ECUNAME": "Driver Assistance Camera (FKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLA_01",
+        "ECUNAME": "Flash Module (FLA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLA_20",
+        "ECUNAME": "Flash Module (FLA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLA_R",
+        "ECUNAME": "Flash Module (FLA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLE02_L",
+        "ECUNAME": "Front Light Electronics (FLE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLE02_R",
+        "ECUNAME": "Front Light Electronics (FLE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLE_L",
+        "ECUNAME": "Front Light Electronics (FLE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLE_R",
+        "ECUNAME": "Front Light Electronics (FLE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM01_L",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM01_R",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM02_L",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM02_R",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM02X_L",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM02X_R",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM03_L",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM03_R",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM2_1_L",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FLM2_1_R",
+        "ECUNAME": "Front Light Module (FLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FRM3",
+        "ECUNAME": "Footwell Module (FRM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FRR_10",
+        "ECUNAME": "Front Range Radar (FRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FRR_30V",
+        "ECUNAME": "Front Range Radar (FRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FRR_G11",
+        "ECUNAME": "Front Range Radar (FRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FZD3",
+        "ECUNAME": "Roof Function Center (FZD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FZD40IRK",
+        "ECUNAME": "Roof Function Center (FZD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FZD_20",
+        "ECUNAME": "Roof Function Center (FZD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FZD_F15",
+        "ECUNAME": "Roof Function Center (FZD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FZD_F40",
+        "ECUNAME": "Roof Function Center (FZD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FZD_G11",
+        "ECUNAME": "Roof Function Center (FZD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "FZD_I20",
+        "ECUNAME": "Roof Function Center (FZD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GHAS10",
+        "ECUNAME": "Rear Axle Differential Lock (GHAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GKEB23TU",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GKEG3HY",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GKEHY23",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GS100A",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GS19D",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSAW01",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSAW02FH",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSAW02FP",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSB231",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSD_F90",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSF21",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSF21A",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSGE01QT",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSGE01QW",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSZF04GA",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSZF04GD",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSZF04GF",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSZFB1",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSZFBCE",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GSZFBHY1",
+        "ECUNAME": "Electronic Transmission Control (EGS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GW_RR4",
+        "ECUNAME": "Gateway Module (GW)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS2",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_01",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_F15",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_G05",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_G05B",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_G05K",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_G11",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_G11B",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GWS_I01",
+        "ECUNAME": "Gear Selector Switch (GWS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GZAL01",
+        "ECUNAME": "Seat Heater Left (GZAL)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "GZAR01",
+        "ECUNAME": "Seat Heater Right (GZAR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HC2_01",
+        "ECUNAME": "Climate Control (HC2)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HC2_G11",
+        "ECUNAME": "Climate Control (HC2)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HKA_02",
+        "ECUNAME": "Heating and Climate Control (HKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HKA_G07",
+        "ECUNAME": "Heating and Climate Control (HKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HKA_G12",
+        "ECUNAME": "Heating and Climate Control (HKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HKFM1",
+        "ECUNAME": "Trunk Function Module (HKFM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HKFM_G11",
+        "ECUNAME": "Trunk Function Module (HKFM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HKFM_I20",
+        "ECUNAME": "Trunk Function Module (HKFM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HKL_01",
+        "ECUNAME": "Tailgate Lift (HKL)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HSR_01",
+        "ECUNAME": "Rear Axle Steering (HSR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HSR_G11",
+        "ECUNAME": "Rear Axle Steering (HSR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HSR_I20",
+        "ECUNAME": "Rear Axle Steering (HSR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HU_MGU",
+        "ECUNAME": "Head Unit (HU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HUD_01",
+        "ECUNAME": "Head Unit (HU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HVS_01",
+        "ECUNAME": "High Voltage Storage (HVS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HVS_02",
+        "ECUNAME": "High Voltage Storage (HVS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "HVSGR_01",
+        "ECUNAME": "High Voltage Storage (HVS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IB_G05",
+        "ECUNAME": "Intelligent Battery Sensor (IB)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IB_G2X",
+        "ECUNAME": "Intelligent Battery Sensor (IB)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IB_G70",
+        "ECUNAME": "Intelligent Battery Sensor (IB)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IB_I20",
+        "ECUNAME": "Intelligent Battery Sensor (IB)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ICAM2",
+        "ECUNAME": "Interior Camera (ICAM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ICAM_F15",
+        "ECUNAME": "Interior Camera (ICAM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ICM_25",
+        "ECUNAME": "Integrated Chassis Management (ICM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ICMQL",
+        "ECUNAME": "Integrated Chassis Management (ICM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ICMV",
+        "ECUNAME": "Integrated Chassis Management (ICM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IFM_01",
+        "ECUNAME": "Interior Light Module (IFM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA01",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA1RR",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA20",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA25",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA25_2",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA2RR",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA_F15",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA_G05",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKA_G11",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHKARR4",
+        "ECUNAME": "Integrated Heating and Climate Control (IHKA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "IHX_I1",
+        "ECUNAME": "Integrated Heating and Climate Control (IHX)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "JBBF3",
+        "ECUNAME": "Junction Box Electronics (JBBF)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KAFAS01",
+        "ECUNAME": "Camera-based Driver Assistance System (KAFAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KAFAS04",
+        "ECUNAME": "Camera-based Driver Assistance System (KAFAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KAFAS20",
+        "ECUNAME": "Camera-based Driver Assistance System (KAFAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KAFAS70",
+        "ECUNAME": "Camera-based Driver Assistance System (KAFAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KAFASG11",
+        "ECUNAME": "Camera-based Driver Assistance System (KAFAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KLE_82E",
+        "ECUNAME": "Charger Electronics (KLE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KOMB01",
+        "ECUNAME": "Instrument Cluster (KOMBI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KOMB25",
+        "ECUNAME": "Instrument Cluster (KOMBI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KOMB_G11",
+        "ECUNAME": "Instrument Cluster (KOMBI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KOMB_J29",
+        "ECUNAME": "Instrument Cluster (KOMBI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KOMBRDCT",
+        "ECUNAME": "Instrument Cluster (KOMBI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KOMBSP18",
+        "ECUNAME": "Instrument Cluster (KOMBI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "KOMBSP21",
+        "ECUNAME": "Instrument Cluster (KOMBI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LEM_G11",
+        "ECUNAME": "Charging Electronics Module (LEM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LEMA02HG",
+        "ECUNAME": "Charging Electronics Module (LEM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LEMA02HL",
+        "ECUNAME": "Charging Electronics Module (LEM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LEZF04VB",
+        "ECUNAME": "Left Seat Adjustment (LEZ)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LEZF04VC",
+        "ECUNAME": "Left Seat Adjustment (LEZ)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LEZFVH",
+        "ECUNAME": "Left Seat Adjustment (LEZ)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LHM2_L",
+        "ECUNAME": "Left Headlight Module (LHM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LHM2_R",
+        "ECUNAME": "Left Headlight Module (LHM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LIDAR1VM",
+        "ECUNAME": "Lidar Sensor (LIDAR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LIM_I1",
+        "ECUNAME": "Charging Interface Module (LIM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LMV_01",
+        "ECUNAME": "Steering Column Module (LMV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LMV_F45",
+        "ECUNAME": "Steering Column Module (LMV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LMV_G11",
+        "ECUNAME": "Steering Column Module (LMV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LMV_G70",
+        "ECUNAME": "Steering Column Module (LMV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LMV_U06",
+        "ECUNAME": "Steering Column Module (LMV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "LRR_60",
+        "ECUNAME": "Long Range Radar (LRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MED17_2",
+        "ECUNAME": "Motor Electronics Diesel (MED)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEV17_2N",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEV17N46",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEVD172",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEVD1724",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEVD1725",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEVD172Y",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEVD174K",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEVD176K",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MEVD17KW",
+        "ECUNAME": "Motor Electronics Valve (MEV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MGU_02_A",
+        "ECUNAME": "Media Graphics Unit (MGU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MGU_02_L",
+        "ECUNAME": "Media Graphics Unit (MGU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MMC2",
+        "ECUNAME": "Micro Mobility Controller (MMC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MMCH70",
+        "ECUNAME": "Micro Mobility Controller (MMC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MPAD_PP",
+        "ECUNAME": "Mobile Phone Adapter (MPAD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MPAD_SSC",
+        "ECUNAME": "Mobile Phone Adapter (MPAD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MRR02",
+        "ECUNAME": "Mid Range Radar (MRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MRR_30",
+        "ECUNAME": "Mid Range Radar (MRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MS_S65",
+        "ECUNAME": "MS S65 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MS_S65_2",
+        "ECUNAME": "MS S65 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MS_S65_3",
+        "ECUNAME": "MS S65 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSD80",
+        "ECUNAME": "Digital Motor Electronics (DME/MSD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSD80N43",
+        "ECUNAME": "Digital Motor Electronics (DME/MSD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSD85L6",
+        "ECUNAME": "Digital Motor Electronics (DME/MSD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSD85YL6",
+        "ECUNAME": "Digital Motor Electronics (DME/MSD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSD87",
+        "ECUNAME": "Digital Motor Electronics (DME/MSD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSD87_L0",
+        "ECUNAME": "Digital Motor Electronics (DME/MSD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSD87_R0",
+        "ECUNAME": "Digital Motor Electronics (DME/MSD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSS60",
+        "ECUNAME": "Digital Motor Electronics (DME/MSS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSS70",
+        "ECUNAME": "Digital Motor Electronics (DME/MSS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSV70",
+        "ECUNAME": "Digital Motor Electronics (DME/MSV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSV80",
+        "ECUNAME": "Digital Motor Electronics (DME/MSV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MSV90",
+        "ECUNAME": "Digital Motor Electronics (DME/MSV)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "MV1722",
+        "ECUNAME": "ECU Module (MV1722)",
+        "ECUTYPE": "Unknown"
+    },
+    {
+        "ECUID": "MVD1722",
+        "ECUNAME": "Motor Electronics Valve Diesel (MVD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "N55_ALP",
+        "ECUNAME": "N55 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "N62_TUE",
+        "ECUNAME": "N62 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "N62_TUE2",
+        "ECUNAME": "N62 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "N63TU_L0",
+        "ECUNAME": "N63 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "N63TU_R0",
+        "ECUNAME": "N63 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "N73TU_L0",
+        "ECUNAME": "N73 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "N73TU_R0",
+        "ECUNAME": "N73 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "NBT",
+        "ECUNAME": "Next Big Thing Head Unit (NBT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "NBTEVO",
+        "ECUNAME": "Next Big Thing Head Unit (NBT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "NIVI2",
+        "ECUNAME": "Night Vision (NIVI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "NIVI3",
+        "ECUNAME": "Night Vision (NIVI)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "OBC_G11",
+        "ECUNAME": "On-Board Charger (OBC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PCU48",
+        "ECUNAME": "Power Control Unit (PCU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PCU48_2",
+        "ECUNAME": "Power Control Unit (PCU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PCU_F15",
+        "ECUNAME": "Power Control Unit (PCU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PCU_G11",
+        "ECUNAME": "Power Control Unit (PCU)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PDC_01",
+        "ECUNAME": "Park Distance Control (PDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PDC_F10",
+        "ECUNAME": "Park Distance Control (PDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PDCR3",
+        "ECUNAME": "Park Distance Control (PDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PMA_10",
+        "ECUNAME": "Park Assistant (PMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PMA_15",
+        "ECUNAME": "Park Assistant (PMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "PMA_20",
+        "ECUNAME": "Park Assistant (PMA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "QSG_F15",
+        "ECUNAME": "Quick Start Generator (QSG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RAD12",
+        "ECUNAME": "Radio (RAD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RAD12R",
+        "ECUNAME": "Radio (RAD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RAD2",
+        "ECUNAME": "Radio (RAD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RAD_UKL",
+        "ECUNAME": "Radio (RAD)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RAM01",
+        "ECUNAME": "Read-Aloud Module (RAM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDC_01",
+        "ECUNAME": "Tire Pressure Control (RDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDC_03",
+        "ECUNAME": "Tire Pressure Control (RDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDC_60",
+        "ECUNAME": "Tire Pressure Control (RDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDC_CAN",
+        "ECUNAME": "Tire Pressure Control (RDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDC_E65",
+        "ECUNAME": "Tire Pressure Control (RDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDCKWP",
+        "ECUNAME": "Tire Pressure Control (RDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDCUDS",
+        "ECUNAME": "Tire Pressure Control (RDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RDME_I1",
+        "ECUNAME": "Rear Drive Motor Electronics (RDME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "REM_20",
+        "ECUNAME": "Rear Electronic Module (REM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "REMA_LI",
+        "ECUNAME": "Rear Electronic Module (REM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "REMA_RE",
+        "ECUNAME": "Rear Electronic Module (REM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "REME_I1",
+        "ECUNAME": "Rear Electronic Module (REM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "REME_I12",
+        "ECUNAME": "Rear Electronic Module (REM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RK_HL",
+        "ECUNAME": "Seat Backrest Control (RK)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RK_HR",
+        "ECUNAME": "Seat Backrest Control (RK)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RK_VL",
+        "ECUNAME": "Seat Backrest Control (RK)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RK_VR",
+        "ECUNAME": "Seat Backrest Control (RK)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM2_1L",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM2_1R",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM2_2L",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM2_2R",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM_1L",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM_1R",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM_2L",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RLM_2R",
+        "ECUNAME": "Rear Light Module (RLM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RSE022CR",
+        "ECUNAME": "Rear Seat Entertainment (RSE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RSE_01",
+        "ECUNAME": "Rear Seat Entertainment (RSE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RSE_MGU",
+        "ECUNAME": "Rear Seat Entertainment (RSE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RSEEVO",
+        "ECUNAME": "Rear Seat Entertainment (RSE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RSEH01",
+        "ECUNAME": "Rear Seat Entertainment (RSE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RSEH10",
+        "ECUNAME": "Rear Seat Entertainment (RSE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "RVC_30",
+        "ECUNAME": "Rear View Camera (RVC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "S55",
+        "ECUNAME": "S55 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "S63TU_L0",
+        "ECUNAME": "S63 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "S63TU_R0",
+        "ECUNAME": "S63 Engine Electronics",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SAS_G05",
+        "ECUNAME": "Sensor Assembly System (SAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SAS_G11",
+        "ECUNAME": "Sensor Assembly System (SAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SAS_I1",
+        "ECUNAME": "Sensor Assembly System (SAS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SAT_60",
+        "ECUNAME": "Side Assist (SAT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SC48_01",
+        "ECUNAME": "ECU Module (SC48_01)",
+        "ECUTYPE": "Unknown"
+    },
+    {
+        "ECUID": "SCR01",
+        "ECUNAME": "Selective Catalytic Reduction (SCR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SCR03",
+        "ECUNAME": "Selective Catalytic Reduction (SCR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SCR04",
+        "ECUNAME": "Selective Catalytic Reduction (SCR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SCR05",
+        "ECUNAME": "Selective Catalytic Reduction (SCR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SEC1",
+        "ECUNAME": "Seat Electronic Control (SEC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SEC1_F46",
+        "ECUNAME": "Seat Electronic Control (SEC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SEC1_G20",
+        "ECUNAME": "Seat Electronic Control (SEC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SGE48V",
+        "ECUNAME": "Starter Generator Electronics (SGE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SLE_F15",
+        "ECUNAME": "ECU Module (SLE_F15)",
+        "ECUTYPE": "Unknown"
+    },
+    {
+        "ECUID": "SME_04",
+        "ECUNAME": "Storage Medium Electronics (SME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SME_10",
+        "ECUNAME": "Storage Medium Electronics (SME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SME_F15",
+        "ECUNAME": "Storage Medium Electronics (SME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SME_F18",
+        "ECUNAME": "Storage Medium Electronics (SME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SME_I1",
+        "ECUNAME": "Storage Medium Electronics (SME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SME_M12",
+        "ECUNAME": "Storage Medium Electronics (SME)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM02VL",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM02VR",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM03HL",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM03HR",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM03VL",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM03VR",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM_HL",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM_HR",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM_VL",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SPNM_VR",
+        "ECUNAME": "Side Panel Module (SPNM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR01_HL",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR01_HR",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR01_VL",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR01_VR",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR40_HL",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR40_HR",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR40_L",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR40_R",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR40_VL",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR40_VR",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SRR40ECU",
+        "ECUNAME": "Short Range Radar (SRR)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SVT_01",
+        "ECUNAME": "Vehicle Tracking System (SVT)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "SZL_01",
+        "ECUNAME": "Steering Column Switch Center (SZL)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TBX5_01",
+        "ECUNAME": "Touch Box (TBX)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TCB1",
+        "ECUNAME": "Telematics Communication Box (TCB)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TCB4G",
+        "ECUNAME": "Telematics Communication Box (TCB)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TEE1_01",
+        "ECUNAME": "Thermoelectric Elements (TEE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TEE2_01",
+        "ECUNAME": "Thermoelectric Elements (TEE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TELE60_3",
+        "ECUNAME": "Telematics Module (TELE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TFM_I1",
+        "ECUNAME": "Tow Hook Function Module (TFM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TMS3_L",
+        "ECUNAME": "Thermal Management System (TMS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TMS3_R",
+        "ECUNAME": "Thermal Management System (TMS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TPL",
+        "ECUNAME": "Touch Panel (TPL)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TRSVC01",
+        "ECUNAME": "Traffic Sign Recognition (TRSVC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TRSVC70",
+        "ECUNAME": "Traffic Sign Recognition (TRSVC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TSG_BF",
+        "ECUNAME": "Door Switch Group (TSG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TSG_BFH",
+        "ECUNAME": "Door Switch Group (TSG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TSG_FA",
+        "ECUNAME": "Door Switch Group (TSG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TSG_FAH",
+        "ECUNAME": "Door Switch Group (TSG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TVM2",
+        "ECUNAME": "TV Module (TVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TVM2_T2",
+        "ECUNAME": "TV Module (TVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TVM2R",
+        "ECUNAME": "TV Module (TVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "TVM_89",
+        "ECUNAME": "TV Module (TVM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "UCAP_10",
+        "ECUNAME": "Ultra Capacitor Module (UCAP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "UCX2_I01",
+        "ECUNAME": "Ultra Capacitor (UCX)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "UCX_I01",
+        "ECUNAME": "Ultra Capacitor (UCX)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ULF2_60",
+        "ECUNAME": "Universal Charging Electronics (ULF)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ULF2_HI",
+        "ECUNAME": "Universal Charging Electronics (ULF)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "USS_50",
+        "ECUNAME": "Ultrasonic Sensor System (USS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "USS_50S",
+        "ECUNAME": "Ultrasonic Sensor System (USS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "USS_G05",
+        "ECUNAME": "Ultrasonic Sensor System (USS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "USS_G11",
+        "ECUNAME": "Ultrasonic Sensor System (USS)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VDC_25",
+        "ECUNAME": "Voltage DC Converter (VDC)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VDP_G11",
+        "ECUNAME": "Vertical Dynamics Platform (VDP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VIP_G05",
+        "ECUNAME": "Vehicle Integration Platform (VIP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VIP_G30N",
+        "ECUNAME": "Vehicle Integration Platform (VIP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VIP_I20",
+        "ECUNAME": "Vehicle Integration Platform (VIP)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VSG_H",
+        "ECUNAME": "Vehicle Sound Generator (VSG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VSG_I01",
+        "ECUNAME": "Vehicle Sound Generator (VSG)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "VSW_01",
+        "ECUNAME": "Vehicle Switch (VSW)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "WAVE_01",
+        "ECUNAME": "Waveband Tuner (WAVE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "WAVE_11",
+        "ECUNAME": "Waveband Tuner (WAVE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "WCA_H",
+        "ECUNAME": "Wireless Charging Adapter (WCA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "WCA_V",
+        "ECUNAME": "Wireless Charging Adapter (WCA)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBE5_01",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBE5F01",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBE6",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBE6M",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBE7",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBE_01",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBE_RMT",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBEF01",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBEF6",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZBEL20",
+        "ECUNAME": "Central Control Element (ZBE)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZGW_01",
+        "ECUNAME": "Central Gateway Module (ZGM)",
+        "ECUTYPE": "Auto"
+    },
+    {
+        "ECUID": "ZGW_SP18",
+        "ECUNAME": "Central Gateway Module (ZGM)",
+        "ECUTYPE": "Auto"
+    }
+]
